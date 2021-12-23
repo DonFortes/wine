@@ -2,14 +2,14 @@
 <html lang="ru">
 
 <head>
-  
+
   <title>Wines</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="assets/favicon.ico" type="image/png">
 
   <!-- escape | in url query with %7C . See more https://developer.donnoval.ru/w3cvalidation/ -->
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:600%7CMontserrat&amp;display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:600%7CMontserrat&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="fonts/icomoon/style.css">
 
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
   <link rel="stylesheet" href="css/style.css">
-  
+
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -37,7 +37,7 @@
     </div>
 
 
-    
+
     <div class="header-top">
       <div class="container">
         <div class="d-flex">
@@ -55,12 +55,12 @@
 
 
       </div>
-      
+
       <div class="site-navbar py-2 js-sticky-header site-navbar-target d-none pl-0 d-md-block" role="banner">
 
         <div class="container">
           <div class="d-flex align-items-center">
-            
+
             <div class="mx-auto">
               <nav class="site-navigation position-relative text-left">
                 <ul class="site-menu main-menu js-clone-nav mx-auto d-none pl-0 d-md-block border-none">
@@ -68,19 +68,19 @@
                   <li><a href="#products" class="nav-link text-left">Коллекция вин</a></li>
                   <li><a href="#feedback" class="nav-link text-left">Отзывы</a></li>
                   <li><a href="#footer" class="nav-link text-left">Контакты</a></li>
-                </ul>                                                                                                                                                                                                                                                                                         
+                </ul>
               </nav>
 
             </div>
-           
+
           </div>
         </div>
 
       </div>
-    
+
     </div>
 
-    
+
     <div class="owl-carousel hero-slide owl-style">
       <div class="intro-section container" style="background-image: url('assets/hero_1.jpg');">
         <div class="row justify-content-center text-center align-items-center">
@@ -101,8 +101,8 @@
       </div>
 
     </div>
-    
-    
+
+
     <div><a id="products"></a></div>
     <div class="site-section">
       <div class="container">
@@ -114,42 +114,45 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
-                <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">300 р.</span>
-                </p>
+
+          {% for category, wines in categories.items() %}
+          <div class="col-12 section-title text-center mb-5">
+            <h2 class="d-block">{{category}}</h2>
+          </div>
+
+            {% for wine in wines %}
+            <div class="col-lg-4 mb-5 col-md-6">
+              <div class="wine_v_1 text-center pb-4 pt-5">
+
+                {% if wine.Картинка %}
+                <img src="images/{{wine.Картинка}}" alt="Image" class="img-fluid">
+
+                  {% if wine.Акция %}
+                  <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
+                  {% endif %}
+
+                {% else %}
+                <img src="https://dvmn.org/filer/canonical/1569944855/354/" alt="Image" class="img-fluid">
+                {% endif %}
+
+                <div>
+                  <h3 class="heading mt-3 mb-3 text-dark">{{wine.Название}}</h3>
+                  <p>
+
+                    {% if wine.Сорт %}
+                    Сорт винограда - {{wine.Сорт}}
+                    <br/>
+                    {% endif %}
+
+                    <span class="price">{{wine.Цена}} р.</span>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/granatovyi_braslet.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Гранатовый браслет</h3>
-                <p>
-                  Сорт винограда - Мускат розовый<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-5 col-md-6">
-            <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/shardone.png" alt="Image" class="img-fluid">
-              <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Шардоне</h3>
-                <p>
-                  Сорт винограда - Шардоне<br/>
-                  <span class="price">350 р.</span>
-                </p>
-              </div>
-            </div>
-          </div>
+
+            {% endfor %}
+          {% endfor %}
+
         </div>
       </div>
     </div>
@@ -160,7 +163,7 @@
         <div class="row justify-content-center text-center align-items-center">
           <div class="col-md-8">
             <h2 style="font-size: 3rem;">проверено временем</h2>
-            <span class="sub-title" style="font-size: 2.5rem;">Уже 90 лет с вами</span>
+            <span class="sub-title" style="font-size: 2.5rem;">Уже {{year}} год с вами</span>
           </div>
         </div>
       </div>
@@ -169,7 +172,7 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="owl-carousel owl-slide-3 owl-slide">
-        
+
           <blockquote class="testimony">
             <img src="assets/person_1.jpg" alt="Фото">
             <p>&ldquo;Если бы вино Киндзмараули вдруг стало мужчиной, то это был бы средних лет (35-40 лет) аристократичный мужчина, в белой дорогой рубашке и брюках,
@@ -190,17 +193,17 @@
             <p>&ldquo;Вина Шардоне хорошо подходят к нейтральным по остроте мясным, рыбным блюдам, блюдам из птицы, сырам и фруктам (яблоко, апельсин и груша). Вино мне понравилось, голова на утро от него не болела. Рекомендую.&rdquo;</p>
             <p class="small text-primary">&mdash; Андрей Власов</p>
           </blockquote>
-       
+
         </div>
       </div>
     </div>
-  
 
-    
+
+
     <div class="footer">
       <div><a id="footer"></a></div>
       <div class="container">
-        
+
         <div class="row">
           <div class="col-12 text-center">
             <div class="social-icons">
@@ -227,7 +230,7 @@
         </div>
       </div>
     </div>
-    
+
 
   </div>
   <!-- .site-wrap -->
