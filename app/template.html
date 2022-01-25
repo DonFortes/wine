@@ -6,19 +6,19 @@
   <title>Wines</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="assets/favicon.ico" type="image/png">
+  <link rel="icon" href="../assets/favicon.ico" type="image/png">
 
   <!-- escape | in url query with %7C . See more https://developer.donnoval.ru/w3cvalidation/ -->
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:600%7CMontserrat&amp;display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../fonts/icomoon/style.css">
+  <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../css/jquery-ui.css">
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -42,7 +42,7 @@
         <div class="d-flex">
           <div class="p-2 flex-grow-1">
             <a href="index.html" class="site-logo mx-auto d-block">
-              <img src="assets/logo.png" alt="Image" class="img-fluid">
+              <img src="../assets/logo.png" alt="Image" class="img-fluid">
             </a>
           </div>
           <div class="p-2 align-self-center d-md-none">
@@ -81,7 +81,7 @@
 
 
     <div class="owl-carousel hero-slide owl-style">
-      <div class="intro-section container" style="background-image: url('assets/hero_1.jpg');">
+      <div class="intro-section container" style="background-image: url('../assets/hero_1.jpg');">
         <div class="row justify-content-center text-center align-items-center">
           <div class="col-md-8">
             <span class="sub-title">Высший сорт</span>
@@ -90,7 +90,7 @@
         </div>
       </div>
 
-      <div class="intro-section container" style="background-image: url('assets/hero_2.jpg');">
+      <div class="intro-section container" style="background-image: url('../assets/hero_2.jpg');">
         <div class="row justify-content-center text-center align-items-center">
           <div class="col-md-8">
             <span class="sub-title">Добро пожаловать</span>
@@ -133,14 +133,10 @@
                   {% endif %}
 
                   {% if wine.Акция %}
-                    <img src="assets/profitable.png"
+                    <img src="../assets/profitable.png"
                          style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
                   {% endif %}
-                  <!--Не очень понял что вы имеете ввиду. Здесь нет дублирующихся строчек.
-                  Логика такая: Если у вина есть картинка - он берет её, если нет - ставит дефолтную
-                  по ссылке. И если есть акция - накладывает шильдик акции. Я только вынес условие акции наружу,
-                  а то она не накладывалась бы на дефолтную картинку. Возможно, это вас запутало. Больше не вижу
-                  проблемных мест.-->
+
                   <div>
                     <h3 class="heading mt-3 mb-3 text-dark">{{wine.Название}}</h3>
                     <p>
@@ -161,7 +157,7 @@
       </div>
     </div>
 
-    <div class="hero-2" style="background-image: url('assets/hero_2.jpg');">
+    <div class="hero-2" style="background-image: url('../assets/hero_2.jpg');">
       <div><a id="feedback"></a></div>
       <div class="container">
         <div class="row justify-content-center text-center align-items-center">
@@ -178,7 +174,7 @@
         <div class="owl-carousel owl-slide-3 owl-slide">
 
           <blockquote class="testimony">
-            <img src="assets/person_1.jpg" alt="Фото">
+            <img src="../assets/person_1.jpg" alt="Фото">
             <p>&ldquo;Если бы вино Киндзмараули вдруг стало мужчиной, то это был бы средних лет (35-40 лет)
               аристократичный мужчина, в белой дорогой рубашке и брюках,
               хорошей обуви, статный, знающий чего он хочет, успешный, но имеющий в своей душе такие струны,
@@ -188,7 +184,7 @@
             <p class="small text-primary">&mdash; Марина Ли</p>
           </blockquote>
           <blockquote class="testimony">
-            <img src="assets/person_2.jpg" alt="Фото">
+            <img src="../assets/person_2.jpg" alt="Фото">
             <p>&ldquo;Вино столовое полусладкое белое Кокур - неплохое вино, молодое, невыдержанное. Особенности
               технологии его производства и дают, очевидно, такой вкус.
               Вкус - довольно простой, несложный, но приятный. Невыдержанное вино в чем-то близко к молодому
@@ -197,7 +193,7 @@
             <p class="small text-primary">&mdash; Михаил Яковлев</p>
           </blockquote>
           <blockquote class="testimony">
-            <img src="assets/person_3.jpg" alt="Фото">
+            <img src="../assets/person_3.jpg" alt="Фото">
             <p>&ldquo;Вина Шардоне хорошо подходят к нейтральным по остроте мясным, рыбным блюдам, блюдам из птицы,
               сырам и фруктам (яблоко, апельсин и груша). Вино мне понравилось, голова на утро от него не болела.
               Рекомендую.&rdquo;</p>
@@ -256,16 +252,16 @@
         stroke="#ff5e15" />
     </svg></div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.sticky.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/owl.carousel.min.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.easing.1.3.js"></script>
+  <script src="../js/aos.js"></script>
+  <script src="../js/jquery.sticky.js"></script>
+  <script src="../js/main.js"></script>
 
 </body>
 
