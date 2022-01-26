@@ -6,7 +6,7 @@ import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 START_YEAR = 1920
-FILE_PATH = "../excel_files/wines.xlsx"
+FILE_PATH = "excel_files/wines.xlsx"
 SHEET_NAME = "Лист1"
 
 

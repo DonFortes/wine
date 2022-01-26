@@ -1,4 +1,4 @@
-from app import main
+import main
 
 FILE_PATH = "excel_files/wines.xlsx"
 SHEET_NAME = "Лист1"
