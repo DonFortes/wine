@@ -23,13 +23,13 @@ class Server:
         self.year_now = datetime.datetime.now().year
         self.age = self.year_now - self.start_year
 
-    def create_index_html(self, excel):
+    def create_index_html(self, _excel):
 
         """Creates index.html."""
 
         rendered_page = self.template.render(
             winery_age=self.age,
-            grouped_wines=excel.create_grouped_wines(),
+            grouped_wines=_excel.create_grouped_wines(),
         )
         with open("index.html", "w", encoding="utf8") as file:
             file.write(rendered_page)
